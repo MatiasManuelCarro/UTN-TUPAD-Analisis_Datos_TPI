@@ -1,0 +1,249 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "KA1u_yYfoDfO"
+      },
+      "source": [
+        "# Trabajo Práctico Integrador - Introducción al Análisis de Datos\n",
+        "\n",
+        "**Caso:** análisis y predicción de cancelaciones en reservas hoteleras.\n",
+        "\n",
+        "> Esta plantilla está pensada para construir notebooks independientes y reproducibles. Cada entrega debe poder ejecutarse desde cero, cargando nuevamente el dataset original asignado a la comisión."
+      ],
+      "id": "KA1u_yYfoDfO"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "4KsnOy86oDfP"
+      },
+      "source": [
+        "## 0. Datos de identificación\n",
+        "\n",
+        "- **Apellido y nombre:** COMPLETAR\n",
+        "- **Comisión:** COMPLETAR\n",
+        "- **Dataset asignado:** COMPLETAR\n",
+        "- **Entrega:** COMPLETAR\n",
+        "- **Fecha:** COMPLETAR"
+      ],
+      "id": "4KsnOy86oDfP"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "UhWdg-MDoDfP"
+      },
+      "source": [
+        "## 1. Importación de librerías\n",
+        "\n",
+        "Importar solamente las librerías necesarias para la entrega que se está desarrollando."
+      ],
+      "id": "UhWdg-MDoDfP"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "lsX00XvLoDfP"
+      },
+      "execution_count": null,
+      "outputs": [],
+      "source": [
+        "# Librerías básicas\n",
+        "\n"
+      ],
+      "id": "lsX00XvLoDfP"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_j_Erme-oDfQ"
+      },
+      "source": [
+        "## 2. Carga del dataset\n",
+        "\n",
+        "Cargar el archivo CSV correspondiente a la comisión. El notebook debe funcionar desde el dataset original, no desde objetos creados en otros notebooks."
+      ],
+      "id": "_j_Erme-oDfQ"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "bqzWwsyboDfQ"
+      },
+      "execution_count": null,
+      "outputs": [],
+      "source": [],
+      "id": "bqzWwsyboDfQ"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "I5XRHLkqoDfQ"
+      },
+      "source": [
+        "## 3. Presentación breve del problema\n",
+        "\n",
+        "Redactar una breve explicación del caso de reservas hoteleras y del objetivo de análisis.\n",
+        "\n",
+        "**Variable objetivo:** `is_canceled`\n",
+        "\n",
+        "- `0`: reserva no cancelada.\n",
+        "- `1`: reserva cancelada."
+      ],
+      "id": "I5XRHLkqoDfQ"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "KhYmbxlSoDfQ"
+      },
+      "source": [
+        "## 4. Preparación mínima reproducible\n",
+        "\n",
+        "En cada entrega reconstruir aquí las variables o ajustes necesarios para continuar el análisis. No depender de notebooks anteriores."
+      ],
+      "id": "KhYmbxlSoDfQ"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "AaARtXgkoDfQ"
+      },
+      "execution_count": null,
+      "outputs": [],
+      "source": [],
+      "id": "AaARtXgkoDfQ"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "6oEJJ_jloDfQ"
+      },
+      "source": [
+        "## 5. Desarrollo de la entrega\n",
+        "\n",
+        "Usar esta sección para desarrollar la consigna correspondiente a la semana. Combinar código, resultados e interpretaciones."
+      ],
+      "id": "6oEJJ_jloDfQ"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "XvcZn1-ZoDfQ"
+      },
+      "source": [
+        "### 5.1 Pregunta o propósito de análisis\n",
+        "\n",
+        "Escribir qué se busca analizar en este apartado."
+      ],
+      "id": "XvcZn1-ZoDfQ"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "n-dk-lpQoDfQ"
+      },
+      "execution_count": null,
+      "outputs": [],
+      "source": [
+        "# Código de análisis\n"
+      ],
+      "id": "n-dk-lpQoDfQ"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "t7l3kj5VoDfR"
+      },
+      "source": [
+        "**Interpretación:**\n",
+        "\n",
+        "Escribir aquí qué muestra el resultado obtenido y por qué es relevante para el problema de cancelación de reservas."
+      ],
+      "id": "t7l3kj5VoDfR"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "_TrXPM_RoDfR"
+      },
+      "source": [
+        "### 5.2 Desarrollo adicional\n",
+        "\n",
+        "Agregar las subsecciones necesarias según la entrega: limpieza, transformación, visualización, EDA, modelado o evaluación."
+      ],
+      "id": "_TrXPM_RoDfR"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {
+        "id": "GDDo600CoDfR"
+      },
+      "execution_count": null,
+      "outputs": [],
+      "source": [
+        "# Continuar el desarrollo según corresponda\n"
+      ],
+      "id": "GDDo600CoDfR"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "F92e410toDfR"
+      },
+      "source": [
+        "## 6. Conclusiones parciales\n",
+        "\n",
+        "Sintetizar los principales hallazgos de esta entrega.\n",
+        "Indicar qué decisiones se tomaron y qué resultados se obtuvieron."
+      ],
+      "id": "F92e410toDfR"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "qBXnAnyOoDfR"
+      },
+      "source": [
+        "## 7. Limitaciones y próximos pasos\n",
+        "\n",
+        "Reconocer qué aspectos todavía no pueden afirmarse, qué limitaciones tienen los datos o el modelo, y qué consideran que se debería profundizar más adelante."
+      ],
+      "id": "qBXnAnyOoDfR"
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "oty2IXEDoDfR"
+      },
+      "source": [
+        "---\n",
+        "\n",
+        "### **Recordatorio**\n",
+        "\n",
+        "El TPI no se evalúa solo por ejecutar código. También se evalúa la claridad con la que se justifican decisiones, se interpretan resultados, se reconocen limitaciones y se comunican conclusiones.\n",
+        "Te recomendamos redactar con tus palabras para ir armando la defensa del coloquio final."
+      ],
+      "id": "oty2IXEDoDfR"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "language": "python",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python",
+      "version": "3.x"
+    },
+    "tpi": "IAD TUPaD",
+    "colab": {
+      "provenance": []
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}

@@ -106,28 +106,17 @@
   },
   {
    "cell_type": "markdown",
-   "id": "33c13124",
-   "metadata": {},
-   "source": [
-    "## 2. Dataset Asignado\n",
-    "\n",
-    "- **Comisión:** 11\n",
-    "- **Dataset asignado:** Dataset K"
-   ]
-  },
-  {
-   "cell_type": "markdown",
    "id": "61cff717",
    "metadata": {},
    "source": [
-    "## 3. Carga del dataset\n",
+    "## 2. Carga del dataset\n",
     "\n",
     "Se carga el Dataset perteneciente a la comisión 11:\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 48,
+   "execution_count": 4,
    "id": "d81d6f52",
    "metadata": {},
    "outputs": [
@@ -135,35 +124,7 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Dataset cargado correctamente.\n"
-     ]
-    }
-   ],
-   "source": [
-    "df = pd.read_csv(\"hotel booking TPI grupo K.csv\")\n",
-    "\n",
-    "print(\"Dataset cargado correctamente.\")\n",
-    "\n"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "d81ef707",
-   "metadata": {},
-   "source": [
-    "## 4. Vista Inicial"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 85,
-   "id": "b3c30931",
-   "metadata": {},
-   "outputs": [
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
+      "Dataset cargado correctamente.\n",
       "\n",
       "Vista de los primeros datos: \n"
      ]
@@ -338,7 +299,7 @@
          "type": "integer"
         }
        ],
-       "ref": "8a8dae6c-ef96-43f9-bc77-97ad975ccb6c",
+       "ref": "cf0c7a75-a536-4671-997c-ec5580ed31a1",
        "rows": [
         [
          "0",
@@ -735,14 +696,17 @@
        "[5 rows x 32 columns]"
       ]
      },
-     "execution_count": 85,
+     "execution_count": 4,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
+    "df = pd.read_csv(\"hotel booking TPI grupo K.csv\")\n",
+    "\n",
+    "print(\"Dataset cargado correctamente.\")\n",
     "print(\"\\nVista de los primeros datos: \")\n",
-    "df.head()"
+    "df.head()\n"
    ]
   },
   {
@@ -750,14 +714,14 @@
    "id": "98fc3a47",
    "metadata": {},
    "source": [
-    "## 5. Estructura general:\n",
+    "## 4. Estructura general:\n",
     "\n",
     "Filas y Columnas:"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 86,
+   "execution_count": 5,
    "id": "494f139f",
    "metadata": {},
    "outputs": [
@@ -882,14 +846,14 @@
    "id": "5c1bcfbf",
    "metadata": {},
    "source": [
-    "## 6. Tipos de variables \n",
+    "## Tipos de variables \n",
     "\n",
     "Clasificacion de las variables por su tipo de datos"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 87,
+   "execution_count": 6,
    "id": "b9feccca",
    "metadata": {},
    "outputs": [
@@ -966,7 +930,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 88,
+   "execution_count": 7,
    "id": "f234e908",
    "metadata": {},
    "outputs": [
@@ -1080,7 +1044,7 @@
          "type": "float"
         }
        ],
-       "ref": "28669050-3b6e-479b-b898-b343ff45d51d",
+       "ref": "3bc1d139-55bf-44bd-8c7f-1d01d87fe347",
        "rows": [
         [
          "count",
@@ -1564,7 +1528,7 @@
        "max                           3.00                       5.00  "
       ]
      },
-     "execution_count": 88,
+     "execution_count": 7,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1575,7 +1539,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 89,
+   "execution_count": 8,
    "id": "efe71f48",
    "metadata": {},
    "outputs": [
@@ -1594,7 +1558,7 @@
          "type": "integer"
         }
        ],
-       "ref": "7e1453f0-a2bd-4e84-a25b-2608ad3ae5f6",
+       "ref": "cb182140-ffed-4849-938a-3280a312f1dc",
        "rows": [
         [
          "HB-014269",
@@ -1818,7 +1782,7 @@
        "Name: count, Length: 25000, dtype: int64"
       ]
      },
-     "execution_count": 89,
+     "execution_count": 8,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1832,8 +1796,7 @@
    "id": "45be5cc6",
    "metadata": {},
    "source": [
-    "## 7. Caracterización descriptiva inicial:\n",
-    "Vista inicial de todas las variables "
+    "## Caracterización descriptiva inicial:\n"
    ]
   },
   {
@@ -1846,7 +1809,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 90,
+   "execution_count": 9,
    "id": "0d4b5c62",
    "metadata": {},
    "outputs": [
@@ -1905,7 +1868,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 91,
+   "execution_count": 10,
    "id": "adac31c8",
    "metadata": {},
    "outputs": [
@@ -1995,7 +1958,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 92,
+   "execution_count": 11,
    "id": "7c0bcc1d",
    "metadata": {},
    "outputs": [
@@ -2086,7 +2049,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 93,
+   "execution_count": 12,
    "id": "296a2ac6",
    "metadata": {},
    "outputs": [
@@ -2174,7 +2137,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 94,
+   "execution_count": 13,
    "id": "bc66c4e0",
    "metadata": {},
    "outputs": [
@@ -2255,7 +2218,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 95,
+   "execution_count": 14,
    "id": "367191d9",
    "metadata": {},
    "outputs": [
@@ -2358,7 +2321,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 96,
+   "execution_count": 15,
    "id": "b474022d",
    "metadata": {},
    "outputs": [
@@ -2568,7 +2531,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 97,
+   "execution_count": 16,
    "id": "4763a773",
    "metadata": {},
    "outputs": [
@@ -2725,7 +2688,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 98,
+   "execution_count": 17,
    "id": "e3dbaa41",
    "metadata": {},
    "outputs": [
@@ -2801,7 +2764,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 99,
+   "execution_count": 18,
    "id": "baa3681a",
    "metadata": {},
    "outputs": [
@@ -2924,7 +2887,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 100,
+   "execution_count": 19,
    "id": "1fe3acca",
    "metadata": {},
    "outputs": [
@@ -3072,7 +3035,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 101,
+   "execution_count": 20,
    "id": "6f015523",
    "metadata": {},
    "outputs": [
@@ -3187,7 +3150,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 102,
+   "execution_count": 21,
    "id": "6c279e3a",
    "metadata": {},
    "outputs": [
@@ -3299,7 +3262,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 103,
+   "execution_count": 22,
    "id": "9549cf43",
    "metadata": {},
    "outputs": [
@@ -3413,7 +3376,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 104,
+   "execution_count": 23,
    "id": "fd7b4b69",
    "metadata": {},
    "outputs": [
@@ -3516,7 +3479,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 105,
+   "execution_count": 24,
    "id": "35ced4f8",
    "metadata": {},
    "outputs": [
@@ -3624,7 +3587,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 106,
+   "execution_count": 25,
    "id": "2c446576",
    "metadata": {},
    "outputs": [
@@ -3724,7 +3687,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 107,
+   "execution_count": 26,
    "id": "f30f6ab5",
    "metadata": {},
    "outputs": [
@@ -3816,7 +3779,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 108,
+   "execution_count": 27,
    "id": "85e85939",
    "metadata": {},
    "outputs": [
@@ -3899,7 +3862,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 109,
+   "execution_count": 28,
    "id": "16ad810a",
    "metadata": {},
    "outputs": [
@@ -4018,7 +3981,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 110,
+   "execution_count": 29,
    "id": "09bc618e",
    "metadata": {},
    "outputs": [
@@ -4190,7 +4153,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 111,
+   "execution_count": 30,
    "id": "59041379",
    "metadata": {},
    "outputs": [
@@ -4293,7 +4256,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 112,
+   "execution_count": 34,
    "id": "2b6db362",
    "metadata": {},
    "outputs": [
@@ -4400,7 +4363,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 113,
+   "execution_count": 37,
    "id": "d18a2d5c",
    "metadata": {},
    "outputs": [
@@ -4520,7 +4483,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 114,
+   "execution_count": 38,
    "id": "a379a4f2",
    "metadata": {},
    "outputs": [
@@ -4603,7 +4566,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 115,
+   "execution_count": 39,
    "id": "a017bf7d",
    "metadata": {},
    "outputs": [
@@ -4725,7 +4688,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 116,
+   "execution_count": 40,
    "id": "439ea4ed",
    "metadata": {},
    "outputs": [
@@ -4832,7 +4795,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 117,
+   "execution_count": 42,
    "id": "03e25c68",
    "metadata": {},
    "outputs": [
@@ -4949,7 +4912,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 118,
+   "execution_count": 43,
    "id": "d9f66555",
    "metadata": {},
    "outputs": [
@@ -5042,7 +5005,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 119,
+   "execution_count": 45,
    "id": "8c694117",
    "metadata": {},
    "outputs": [
@@ -5172,7 +5135,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 120,
+   "execution_count": 46,
    "id": "d7a9a466",
    "metadata": {},
    "outputs": [
@@ -5279,7 +5242,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 121,
+   "execution_count": 47,
    "id": "f78a7972",
    "metadata": {},
    "outputs": [
@@ -5380,52 +5343,7 @@
     "Esto confirma que las solicitudes especiales son poco frecuentes y de baja complejidad.\n",
     "\n",
     "\n",
-    "La variable muestra que la mayoría de los huéspedes no requiere condiciones especiales en su estadía.\n",
-    "\n",
-    "---"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6c6e5aeb",
-   "metadata": {},
-   "source": [
-    "## 8. Primeras observaciones\n",
-    "\n",
-    "- El dataset está completo y contiene información suficiente para analizar patrones de cancelación.\n",
-    "\n",
-    "- Existen variables operativas (como deposit_type, booking_changes, customer_type) que probablemente influyan en la cancelación.\n",
-    "\n",
-    "- La distribución de is_canceled es clave para entender el comportamiento general del conjunto de datos.\n",
-    "\n",
-    "- La presencia de valores faltantes en company y agent deberá considerarse en etapas posteriores del análisis.\n",
-    "\n",
-    "---"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "cfd00d8f",
-   "metadata": {},
-   "source": [
-    "## 9. Consideraciones éticas iniciales\n",
-    "\n",
-    "Los datos están anonimizados y no contienen información personal.\n",
-    "Las conclusiones deben tomarse con cuidado, describen patrones generales y no permiten interpretar casos individuales.\n",
-    "El análisis debe evitar sesgos y no discriminar por país o segmento.\n",
-    "Como esta es una etapa exploratoria, solo podemos identificar tendencias iniciales.\n",
-    "\n",
-    "---\n"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "id": "6c037652",
-   "metadata": {},
-   "source": [
-    "## 10. Cierre\n",
-    "\n",
-    "En esta primera etapa se logro comprender la estructura del dataset, revisar sus variables principales y obtener una visión inicial del comportamiento general de las reservas. Esta base exploratoria nos permite avanzar hacia análisis más profundos sobre cancelaciones y factores asociados, siempre manteniendo un enfoque responsable y cuidadoso en la interpretación de los datos."
+    "La variable muestra que la mayoría de los huéspedes no requiere condiciones especiales en su estadía."
    ]
   }
  ],

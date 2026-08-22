@@ -19,11 +19,11 @@
    "source": [
     "## Desarrollado por\n",
     "\n",
-    "- **Apellido y nombre:** Matias Carro y Hugo Catalan\n",
+    "- **Integrantes:** `Matias Carro` y `Hugo Catalan`\n",
     "- **Comisión:** 11\n",
     "- **Dataset asignado:** Dataset K\n",
     "- **Entrega:** Primer Entrega - Semana 3\n",
-    "- **Fecha:** "
+    "- **Fecha:** 22/08/2026"
    ]
   },
   {
@@ -42,7 +42,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 3,
+   "execution_count": 111,
    "id": "62970647",
    "metadata": {},
    "outputs": [
@@ -51,7 +51,7 @@
      "output_type": "stream",
      "text": [
       "Versión de Pandas: 3.0.5\n",
-      "Versión de numpy: 2.5.1\n",
+      "Versión de numpy: 2.5.2\n",
       "\n",
       "Librerías cargadas correctamente.\n"
      ]
@@ -106,17 +106,28 @@
   },
   {
    "cell_type": "markdown",
+   "id": "33c13124",
+   "metadata": {},
+   "source": [
+    "## 2. Dataset Asignado\n",
+    "\n",
+    "- **Comisión:** 11\n",
+    "- **Dataset asignado:** Dataset K"
+   ]
+  },
+  {
+   "cell_type": "markdown",
    "id": "61cff717",
    "metadata": {},
    "source": [
-    "## 2. Carga del dataset\n",
+    "## 3. Carga del dataset\n",
     "\n",
     "Se carga el Dataset perteneciente a la comisión 11:\n"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 112,
    "id": "d81d6f52",
    "metadata": {},
    "outputs": [
@@ -124,7 +135,35 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "Dataset cargado correctamente.\n",
+      "Dataset cargado correctamente.\n"
+     ]
+    }
+   ],
+   "source": [
+    "df = pd.read_csv(\"hotel booking TPI grupo K.csv\")\n",
+    "\n",
+    "print(\"Dataset cargado correctamente.\")\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d81ef707",
+   "metadata": {},
+   "source": [
+    "## 4. Vista Inicial"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 113,
+   "id": "b3c30931",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
       "\n",
       "Vista de los primeros datos: \n"
      ]
@@ -299,7 +338,7 @@
          "type": "integer"
         }
        ],
-       "ref": "cf0c7a75-a536-4671-997c-ec5580ed31a1",
+       "ref": "1a69b729-3019-4503-9a7c-f790f126fe12",
        "rows": [
         [
          "0",
@@ -696,17 +735,14 @@
        "[5 rows x 32 columns]"
       ]
      },
-     "execution_count": 4,
+     "execution_count": 113,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "df = pd.read_csv(\"hotel booking TPI grupo K.csv\")\n",
-    "\n",
-    "print(\"Dataset cargado correctamente.\")\n",
     "print(\"\\nVista de los primeros datos: \")\n",
-    "df.head()\n"
+    "df.head()"
    ]
   },
   {
@@ -714,14 +750,14 @@
    "id": "98fc3a47",
    "metadata": {},
    "source": [
-    "## 4. Estructura general:\n",
+    "## 5. Estructura general:\n",
     "\n",
     "Filas y Columnas:"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 114,
    "id": "494f139f",
    "metadata": {},
    "outputs": [
@@ -846,14 +882,14 @@
    "id": "5c1bcfbf",
    "metadata": {},
    "source": [
-    "## Tipos de variables \n",
+    "## 6. Tipos de variables \n",
     "\n",
     "Clasificacion de las variables por su tipo de datos"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 115,
    "id": "b9feccca",
    "metadata": {},
    "outputs": [
@@ -925,15 +961,24 @@
    "id": "5e792f2c",
    "metadata": {},
    "source": [
-    "### Resumen descriptivo"
+    "### Resumen descriptivo\n",
+    "\n",
+    "Estadisticas iniciales de cada variable"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 116,
    "id": "f234e908",
    "metadata": {},
    "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Resumen descriptivo:\n"
+     ]
+    },
     {
      "data": {
       "application/vnd.microsoft.datawrangler.viewer.v0+json": {
@@ -1044,7 +1089,7 @@
          "type": "float"
         }
        ],
-       "ref": "3bc1d139-55bf-44bd-8c7f-1d01d87fe347",
+       "ref": "6fea5fe0-abf8-46b2-8eef-0a49495684c0",
        "rows": [
         [
          "count",
@@ -1528,267 +1573,14 @@
        "max                           3.00                       5.00  "
       ]
      },
-     "execution_count": 7,
+     "execution_count": 116,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
+    "print(\"Resumen descriptivo:\")\n",
     "df.describe().round(2)"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 8,
-   "id": "efe71f48",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "application/vnd.microsoft.datawrangler.viewer.v0+json": {
-       "columns": [
-        {
-         "name": "booking_id",
-         "rawType": "str",
-         "type": "string"
-        },
-        {
-         "name": "count",
-         "rawType": "int64",
-         "type": "integer"
-        }
-       ],
-       "ref": "cb182140-ffed-4849-938a-3280a312f1dc",
-       "rows": [
-        [
-         "HB-014269",
-         "1"
-        ],
-        [
-         "HB-018087",
-         "1"
-        ],
-        [
-         "HB-022870",
-         "1"
-        ],
-        [
-         "HB-048154",
-         "1"
-        ],
-        [
-         "HB-060351",
-         "1"
-        ],
-        [
-         "HB-079705",
-         "1"
-        ],
-        [
-         "HB-047441",
-         "1"
-        ],
-        [
-         "HB-010926",
-         "1"
-        ],
-        [
-         "HB-072732",
-         "1"
-        ],
-        [
-         "HB-108095",
-         "1"
-        ],
-        [
-         "HB-111144",
-         "1"
-        ],
-        [
-         "HB-012571",
-         "1"
-        ],
-        [
-         "HB-057091",
-         "1"
-        ],
-        [
-         "HB-074950",
-         "1"
-        ],
-        [
-         "HB-027327",
-         "1"
-        ],
-        [
-         "HB-001901",
-         "1"
-        ],
-        [
-         "HB-066079",
-         "1"
-        ],
-        [
-         "HB-021485",
-         "1"
-        ],
-        [
-         "HB-102688",
-         "1"
-        ],
-        [
-         "HB-032750",
-         "1"
-        ],
-        [
-         "HB-075432",
-         "1"
-        ],
-        [
-         "HB-014345",
-         "1"
-        ],
-        [
-         "HB-077540",
-         "1"
-        ],
-        [
-         "HB-003318",
-         "1"
-        ],
-        [
-         "HB-006106",
-         "1"
-        ],
-        [
-         "HB-115190",
-         "1"
-        ],
-        [
-         "HB-079037",
-         "1"
-        ],
-        [
-         "HB-116158",
-         "1"
-        ],
-        [
-         "HB-098836",
-         "1"
-        ],
-        [
-         "HB-108611",
-         "1"
-        ],
-        [
-         "HB-098882",
-         "1"
-        ],
-        [
-         "HB-004606",
-         "1"
-        ],
-        [
-         "HB-000289",
-         "1"
-        ],
-        [
-         "HB-029560",
-         "1"
-        ],
-        [
-         "HB-078755",
-         "1"
-        ],
-        [
-         "HB-016185",
-         "1"
-        ],
-        [
-         "HB-044339",
-         "1"
-        ],
-        [
-         "HB-035887",
-         "1"
-        ],
-        [
-         "HB-063086",
-         "1"
-        ],
-        [
-         "HB-034077",
-         "1"
-        ],
-        [
-         "HB-019259",
-         "1"
-        ],
-        [
-         "HB-086543",
-         "1"
-        ],
-        [
-         "HB-001325",
-         "1"
-        ],
-        [
-         "HB-035801",
-         "1"
-        ],
-        [
-         "HB-066951",
-         "1"
-        ],
-        [
-         "HB-015440",
-         "1"
-        ],
-        [
-         "HB-010495",
-         "1"
-        ],
-        [
-         "HB-084653",
-         "1"
-        ],
-        [
-         "HB-053289",
-         "1"
-        ],
-        [
-         "HB-068939",
-         "1"
-        ]
-       ],
-       "shape": {
-        "columns": 1,
-        "rows": 25000
-       }
-      },
-      "text/plain": [
-       "booking_id\n",
-       "HB-014269    1\n",
-       "HB-018087    1\n",
-       "HB-022870    1\n",
-       "HB-048154    1\n",
-       "HB-060351    1\n",
-       "            ..\n",
-       "HB-088693    1\n",
-       "HB-102568    1\n",
-       "HB-061499    1\n",
-       "HB-075900    1\n",
-       "HB-078303    1\n",
-       "Name: count, Length: 25000, dtype: int64"
-      ]
-     },
-     "execution_count": 8,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "df['booking_id'].value_counts()"
    ]
   },
   {
@@ -1796,7 +1588,8 @@
    "id": "45be5cc6",
    "metadata": {},
    "source": [
-    "## Caracterización descriptiva inicial:\n"
+    "## 7. Caracterización descriptiva inicial:\n",
+    "Vista inicial de todas las variables "
    ]
   },
   {
@@ -1809,7 +1602,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 117,
    "id": "0d4b5c62",
    "metadata": {},
    "outputs": [
@@ -1817,6 +1610,7 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
+      "Conteos:\n",
       "count         25000\n",
       "unique        25000\n",
       "top       HB-014269\n",
@@ -1833,7 +1627,7 @@
    ],
    "source": [
     "\n",
-    "\n",
+    "print(\"Conteos:\")\n",
     "print(df[\"booking_id\"].describe())\n",
     "ids_unicos = df[\"booking_id\"].nunique()\n",
     "faltantes = df[\"booking_id\"].isnull().sum()\n",
@@ -1868,7 +1662,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
+   "execution_count": 118,
    "id": "adac31c8",
    "metadata": {},
    "outputs": [
@@ -1936,11 +1730,11 @@
     "0 (0%)\n",
     "\n",
     "**Valores distintos:**  \n",
-    "2\n",
+    "Se tratan de 2 valores distintos\n",
     "\n",
-    "**Distribución:**  \n",
-    "- City Hotel: 67%  \n",
-    "- Resort Hotel: 33%\n",
+    "**Distribución y porcentajes:**  \n",
+    "- City Hotel: 16716 (67%)\n",
+    "- Resort Hotel: 8284 (33%)\n",
     "\n",
     "**Observación:**  \n",
     "La mayoría de las reservas corresponden al City Hotel. \n",
@@ -1958,7 +1752,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 119,
    "id": "7c0bcc1d",
    "metadata": {},
    "outputs": [
@@ -2016,7 +1810,6 @@
    "id": "89d03dee",
    "metadata": {},
    "source": [
-    "### 3. is_canceled\n",
     "\n",
     "**Descripción:**  \n",
     "La variable `is_canceled` indica si la reserva fue cancelada (`1`) o no (`0`). Es una variable clave porque representa el resultado final del proceso de reserva y suele ser la variable objetivo en modelos de predicción de cancelaciones.\n",
@@ -2025,15 +1818,17 @@
     "0 (0%)\n",
     "\n",
     "**Valores distintos:**  \n",
-    "2  \n",
+    "Son 2 valores distintos. \n",
     "- `0`: reserva no cancelada  \n",
     "- `1`: reserva cancelada  \n",
     "\n",
     "**Distribución:**  \n",
-    "- No canceladas: ~60%  \n",
-    "- Canceladas: ~40%\n",
+    "- No canceladas: 15729 (62.91%) \n",
+    "- Canceladas: 9271 (37.08%)\n",
     "\n",
     "**Observación:**  \n",
+    "Es la variable principal a observar y analizar.\n",
+    "\n",
     "El dataset presenta una proporción considerable de cancelaciones. Esta distribución es importante para evaluar y llegar a una conclusion del motivo tan alto de las cancelaciones.\n",
     "\n",
     "---"
@@ -2049,7 +1844,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 120,
    "id": "296a2ac6",
    "metadata": {},
    "outputs": [
@@ -2072,7 +1867,10 @@
       "50%         68.000000\n",
       "75%        159.000000\n",
       "max        629.000000\n",
-      "Name: lead_time, dtype: float64\n"
+      "Name: lead_time, dtype: float64\n",
+      "\n",
+      "Minimo y Maximo:\n",
+      "Min: 0  |  Max: 629\n"
      ]
     }
    ],
@@ -2092,6 +1890,9 @@
     "print(df[\"lead_time\"].describe())\n",
     "\n",
     "\n",
+    "print(f\"\\nMinimo y Maximo:\\nMin: {df['lead_time'].min()}  |  Max: {df['lead_time'].max()}\")\n",
+    "\n",
+    "\n",
     "\n",
     "\n"
    ]
@@ -2103,14 +1904,14 @@
    "source": [
     "\n",
     "**Descripción:**  \n",
-    "La variable lead_time representa la cantidad de días entre la fecha de reserva y la fecha de llegada (anticipacion). \n",
+    "La variable `lead_time` representa la cantidad de días entre la fecha de reserva y la fecha de llegada (anticipacion). \n",
     "\n",
     "**Faltantes:**  \n",
-    "0 \n",
+    "0 faltantes, se encuentra completo.\n",
     "\n",
     "Se trata de 460 valores diferentes. De un total de 25000 datos, sin ningun faltante.\n",
     "\n",
-    "**Hay una endencia central:** La media es 103 días, pero la mediana es 68, esto nos dice que la distribución está sesgada por valores extremos altos.\n",
+    "**Outliers:** La media es 103 días, pero la mediana es 68, esto nos dice que la distribución está sesgada por valores extremos altos.\n",
     "\n",
     "**Dispersión:** La desviación estándar es 106 días, bastante elevada, lo que confirma gran variabilidad.\n",
     "\n",
@@ -2123,6 +1924,8 @@
     "  - 50% con menos de 68 días.\n",
     "\n",
     "  - 75% con menos de 159 días.\n",
+    "\n",
+    "Muestra una anticipación muy variable: aunque la mayoría de las reservas se hacen dentro de los primeros 2 meses, existen valores extremos que llegan hasta 629 días y generan una distribución muy dispersa\n",
     "\n",
     "---\n"
    ]
@@ -2137,7 +1940,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 121,
    "id": "bc66c4e0",
    "metadata": {},
    "outputs": [
@@ -2218,7 +2021,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 122,
    "id": "367191d9",
    "metadata": {},
    "outputs": [
@@ -2321,7 +2124,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 123,
    "id": "b474022d",
    "metadata": {},
    "outputs": [
@@ -2514,9 +2317,7 @@
     "\n",
     "- Las semanas iniciales y finales del año muestran menor actividad, especialmente la semana 1 y la semana 52, que presentan los valores más bajos del conjunto.\n",
     "\n",
-    "- La variable presenta baja asimetría (skew ≈ 0) y kurtosis negativa, indicando una distribución bastante plana y sin extremos marcados.\n",
-    "\n",
-    "Como analisis preliminar se puede asumir que los picos en semanas centrales están asociados a vacaciones o temporadas turísticas específicas que incrementan la demanda.\n",
+    "Se puede asumir que los picos en semanas centrales están asociados a vacaciones o temporadas turísticas específicas que incrementan la demanda.\n",
     "\n",
     "---"
    ]
@@ -2531,7 +2332,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
+   "execution_count": 124,
    "id": "4763a773",
    "metadata": {},
    "outputs": [
@@ -2673,7 +2474,7 @@
     "- El día 31 tiene el porcentaje más bajo (1.88%).\n",
     "\n",
     "\n",
-    "Las llegadas se concentran en días centrales del mes, mientras que los extremos muestran menor actividad. Esto sugiere un patrón estable de reservas que favorece la mitad del mes.\n",
+    "Las llegadas se concentran en días centrales del mes, mientras que los extremos muestran menor actividad. Esto muestra un patrón estable de reservas que se centran en la mitad del mes.\n",
     "\n",
     "---"
    ]
@@ -2688,7 +2489,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 125,
    "id": "e3dbaa41",
    "metadata": {},
    "outputs": [
@@ -2733,7 +2534,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable arrival_date representa la fecha completa de llegada del huésped al hotel.\n",
+    "La variable `arrival_date` representa la fecha completa de llegada del huésped al hotel.\n",
     "\n",
     "**Faltantes**\n",
     "\n",
@@ -2764,7 +2565,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 126,
    "id": "baa3681a",
    "metadata": {},
    "outputs": [
@@ -2887,7 +2688,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
+   "execution_count": 127,
    "id": "1fe3acca",
    "metadata": {},
    "outputs": [
@@ -3035,7 +2836,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 20,
+   "execution_count": 128,
    "id": "6f015523",
    "metadata": {},
    "outputs": [
@@ -3150,7 +2951,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 21,
+   "execution_count": 129,
    "id": "6c279e3a",
    "metadata": {},
    "outputs": [
@@ -3215,7 +3016,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable children representa la cantidad de niños incluidos en cada reserva. Los valores observados van desde 0 hasta 3, mostrando que la mayoría de las reservas no incluyen menores.\n",
+    "La variable `children` representa la cantidad de niños incluidos en cada reserva. Los valores observados van desde 0 hasta 3, mostrando que la mayoría de las reservas no incluyen menores.\n",
     "\n",
     "**Faltantes**\n",
     "\n",
@@ -3262,7 +3063,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 22,
+   "execution_count": 130,
    "id": "9549cf43",
    "metadata": {},
    "outputs": [
@@ -3329,7 +3130,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable babies representa la cantidad de bebés incluidos en cada reserva. Los valores observados van desde 0 hasta 10, aunque la distribución muestra que prácticamente todas las reservas no incluyen bebés.\n",
+    "La variable `babies` representa la cantidad de bebés incluidos en cada reserva. Los valores observados van desde 0 hasta 10, aunque la distribución muestra que prácticamente todas las reservas no incluyen bebés.\n",
     "\n",
     "**Faltantes**\n",
     "\n",
@@ -3376,7 +3177,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 23,
+   "execution_count": 131,
    "id": "fd7b4b69",
    "metadata": {},
    "outputs": [
@@ -3433,7 +3234,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable meal indica el tipo de comidas asociado a cada reserva. Los valores corresponden a categorías estándar utilizadas en hoteles:\n",
+    "La variable `meal` indica el tipo de comidas asociado a cada reserva. Los valores corresponden a categorías estándar utilizadas en hoteles:\n",
     "\n",
     "- BB - Bed & Breakfast (Alojamiento y Desayuno)\n",
     "\n",
@@ -3479,7 +3280,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": 132,
    "id": "35ced4f8",
    "metadata": {},
    "outputs": [
@@ -3546,7 +3347,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable country identifica el país de origen del huésped. Es una variable categórica con alta diversidad,con 129 países distintos, lo que muestra una clientela internacional.\n",
+    "La variable `country` identifica el país de origen del huésped. Es una variable categórica con alta diversidad,con 129 países distintos, lo que muestra una clientela internacional.\n",
     "\n",
     "**Faltantes**\n",
     "Presenta 101 valores faltantes, menos del 1%, por lo que la variable está prácticamente completa.\n",
@@ -3587,7 +3388,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 25,
+   "execution_count": 133,
    "id": "2c446576",
    "metadata": {},
    "outputs": [
@@ -3646,7 +3447,17 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable market_segment indica el canal por el cual llega la reserva. \n",
+    "La variable `market_segment` indica el canal por el cual llega la reserva. \n",
+    "\n",
+    "**Datos**\n",
+    "\n",
+    "- **Online TA:** *Online Travel Agency* — Agencia de viajes online.\n",
+    "- **Offline TA/TO:** *Travel Agency / Tour Operator* — Agencias y operadores turísticos no digitales.\n",
+    "- **Groups:** *Grupos organizados* — Excursiones, delegaciones, eventos, equipos deportivos.\n",
+    "- **Direct:** *Reserva directa* — Página web del hotel, teléfono, mostrador o email.\n",
+    "- **Corporate:** *Corporativo* — Empresas con acuerdos comerciales o empleados viajando por trabajo.\n",
+    "- **Complementary:** *Cortesía* — Reservas sin costo: invitados especiales, personal, compensaciones.\n",
+    "- **Aviation:** *Aerolíneas* — Tripulaciones, pasajeros varados en escalas, convenios con compañías aéreas.\n",
     "\n",
     "**Faltantes**\n",
     "\n",
@@ -3654,21 +3465,22 @@
     "\n",
     "La mas repetida es Online TA con 11867 registros.\n",
     "\n",
+    "\n",
     "**Distribución** \n",
     "\n",
-    "- Online TA: 47.47%\n",
+    "- Online TA: 11867 (47.47%)\n",
     "\n",
-    "- Offline TA/TO: 20.04%\n",
+    "- Offline TA/TO: 5011 (20.04%)\n",
     "\n",
-    "- Groups: 16.65%\n",
+    "- Groups: 4163 (16.65%)\n",
     "\n",
-    "- Direct: 10.60%\n",
+    "- Direct: 2650 (10.60%)\n",
     "\n",
-    "- Corporate: 4.46%\n",
+    "- Corporate: 1114 (4.46%)\n",
     "\n",
-    "- Complementary: 0.59%\n",
+    "- Complementary: 148 (0.59%)\n",
     "\n",
-    "- Aviation: 0.19%\n",
+    "- Aviation: 47 (0.19%)\n",
     "\n",
     "El valor más frecuente es Online TA, con 11.867 reservas.\n",
     "\n",
@@ -3687,7 +3499,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 26,
+   "execution_count": 134,
    "id": "f30f6ab5",
    "metadata": {},
    "outputs": [
@@ -3740,7 +3552,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable indica el canal por el cual se distribuye la reserva. \n",
+    "La variable `distribution_channel`  indica el canal por el cual se distribuye la reserva. \n",
     "\n",
     "\n",
     "\n",
@@ -3779,7 +3591,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 27,
+   "execution_count": 135,
    "id": "85e85939",
    "metadata": {},
    "outputs": [
@@ -3832,7 +3644,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable indica si el huésped es recurrente (1) o nuevo (0). \n",
+    "La `is_repeated_guest`variable indica si el huésped es recurrente (1) o nuevo (0). \n",
     "\n",
     "**Faltantes**\n",
     "\n",
@@ -3862,7 +3674,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
+   "execution_count": 136,
    "id": "16ad810a",
    "metadata": {},
    "outputs": [
@@ -3944,7 +3756,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable indica cuántas reservas anteriores fueron canceladas por el mismo huésped antes de la actual. \n",
+    "La variable `previous_cancellations` indica cuántas reservas anteriores fueron canceladas por el mismo huésped antes de la actual. \n",
     "\n",
     "**Faltantes**\n",
     "\n",
@@ -3981,7 +3793,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
+   "execution_count": 137,
    "id": "09bc618e",
    "metadata": {},
    "outputs": [
@@ -4111,7 +3923,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable indica cuántas reservas anteriores no canceladas realizó el huésped antes de la actual. \n",
+    "La variable `previous_bookings_not_canceled` indica cuántas reservas anteriores no canceladas realizó el huésped antes de la actual. \n",
     "\n",
     "**Faltantes**\n",
     "\n",
@@ -4153,7 +3965,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 30,
+   "execution_count": 138,
    "id": "59041379",
    "metadata": {},
    "outputs": [
@@ -4219,7 +4031,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "Variable categórica que indica el tipo de habitación reservada por los huespedes.\n",
+    "La variable `reserved_room_type` es una varaible categórica que indica el tipo de habitación reservada por los huespedes.\n",
     "\n",
     "**Faltantes**\n",
     "\n",
@@ -4256,7 +4068,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 34,
+   "execution_count": 139,
    "id": "2b6db362",
    "metadata": {},
    "outputs": [
@@ -4323,7 +4135,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "La variable indica el tipo de habitación finalmente asignada al huésped.\n",
+    "La variable `assigned_room_type` indica el tipo de habitación finalmente asignada al huésped.\n",
     "\n",
     "**Faltantes**\n",
     " No presenta valores faltantes.\n",
@@ -4363,7 +4175,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 37,
+   "execution_count": 140,
    "id": "d18a2d5c",
    "metadata": {},
    "outputs": [
@@ -4433,7 +4245,8 @@
     "\n",
     "print(f\"\\nPorcentajes:\\n{df['booking_changes'].value_counts(normalize=True).round(4)}\")\n",
     "\n",
-    "print(f\"\\nMinimo y Maximo:\\nMin: {df['booking_changes'].min()}  |  Max: {df['booking_changes'].max()}\")"
+    "print(f\"\\nMinimo y Maximo:\\nMin: {df['booking_changes'].min()}  |  Max: {df['booking_changes'].max()}\")\n",
+    "\n"
    ]
   },
   {
@@ -4443,7 +4256,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "Variable numérica que indica cuántas veces se modificó la reserva antes de su llegada (cambios de fechas, habitación, etc.)\n",
+    "La variable `booking_changes` es una varible numérica que indica cuántas veces se modificó la reserva antes de su llegada (cambios de fechas, habitación, etc.)\n",
     "\n",
     "**Faltantes**\n",
     "No presenta valores faltantes\n",
@@ -4454,13 +4267,13 @@
     "\n",
     "**Distribución**\n",
     "\n",
-    "- 0 cambios: mayoría absoluta (más de 21.000 registros)\n",
+    "- 0 cambios: mayoría absoluta (21194 registros, un  84.78%) \n",
     "\n",
-    "- 1 cambio: proporción baja\n",
+    "- 1 cambio: 2647 (10.59%)\n",
     "\n",
-    "- 2 a 4 cambios: muy bajos\n",
+    "- 2 a 4 cambios: muy bajos (Un 4.43% entre todos)\n",
     "\n",
-    "- 5 o mas cambios: extremadamente raros\n",
+    "- 5 o mas cambios: extremadamente raros (Un 0.20% restante)\n",
     "\n",
     "- Máximo observado: 14 cambios (Outlier extremo)\n",
     "\n",
@@ -4483,7 +4296,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 38,
+   "execution_count": 141,
    "id": "a379a4f2",
    "metadata": {},
    "outputs": [
@@ -4534,11 +4347,13 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "Variable categórica que indica el tipo de depósito asociado a la reserva.\n",
+    "`deposit_type` es una variable categórica que indica el tipo de depósito asociado a la reserva.\n",
+    "\n",
     "Tiene 3 categorías: No Deposit (Sin deposito), Non Refund (No reembolsable), Refundable (Reembolsable).\n",
     "\n",
     "**Faltantes**\n",
-    "No tiene faltantes faltantes\n",
+    "\n",
+    "No tiene faltantes \n",
     "\n",
     "**Distribución y porcentaje**\n",
     "\n",
@@ -4549,7 +4364,6 @@
     "- Refundable:30 (menos del 1%)\n",
     "\n",
     "La distribución está fuertemente concentrada en No Deposit, lo que indica que la mayoría de las reservas no requieren pago anticipado.\n",
-    "Interpretación breve\n",
     "\n",
     "La predominancia de No Deposit sugiere que el hotel opera principalmente con reservas sin compromiso previo, podria tratarse de una de las causas de la tasa tan altas de cancelaciones\n",
     "\n",
@@ -4566,7 +4380,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 39,
+   "execution_count": 142,
    "id": "a017bf7d",
    "metadata": {},
    "outputs": [
@@ -4637,12 +4451,14 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "Variable numérica que identifica el ID del agente o agencia de viajes que gestionó la reserva.\n",
+    "`agent` es una variable numérica que identifica el ID del agente o agencia de viajes que gestionó la reserva.\n",
     "\n",
     "**Faltantes**\n",
+    "\n",
     "Tiene 3489 valores nulos (14%), lo cual puede indicar reservas hechas sin agente (directas).\n",
     "\n",
     "**Estadisticas**\n",
+    "\n",
     "Tiene 268 valores distintos, cuenta con una alta diversidad de agencias.\n",
     "\n",
     "Los estadísticos muestran una distribución muy dispersa:\n",
@@ -4688,7 +4504,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 40,
+   "execution_count": 143,
    "id": "439ea4ed",
    "metadata": {},
    "outputs": [
@@ -4758,9 +4574,11 @@
    "metadata": {},
    "source": [
     "**Descripción**\n",
-    "Variable que identifica la empresa asociada a la reserva.\n",
+    "\n",
+    "`company`es una variable que identifica la empresa asociada a la reserva.\n",
     "\n",
     "**Faltantes**\n",
+    "\n",
     "Tiene 94% de valores nulos, lo que indica que casi todas las reservas no provienen de compañías sino de clientes individuales o agencias.\n",
     "\n",
     "**Distribución**\n",
@@ -4795,7 +4613,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 42,
+   "execution_count": 144,
    "id": "03e25c68",
    "metadata": {},
    "outputs": [
@@ -4871,7 +4689,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "Variable numérica que indica cuántos días estuvo una reserva en lista de espera antes de ser confirmada.\n",
+    "La variavble `days_in_waiting_list` es numérica, indica cuántos días estuvo una reserva en lista de espera antes de ser confirmada.\n",
     "\n",
     "**Faltantes**\n",
     "\n",
@@ -4912,7 +4730,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 43,
+   "execution_count": 145,
    "id": "d9f66555",
    "metadata": {},
    "outputs": [
@@ -4965,7 +4783,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "customer_type clasifica el tipo de cliente según el patrón de reserva. \n",
+    "`customer_type` clasifica el tipo de cliente según el patrón de reserva. \n",
     "\n",
     "**Faltantes**\n",
     "\n",
@@ -4990,7 +4808,7 @@
     "\n",
     "- Group: 118 (0.47%)\n",
     "\n",
-    "El hotel trabaja principalmente con clientes individuales, seguido por pequeños grupos informales. Las reservas corporativas y los grupos organizados son marginales. Esto sugiere un perfil de operación centrado en turismo general y viajeros independientes, con poca presencia de contratos empresariales o grandes grupos.\n",
+    "El hotel trabaja principalmente con clientes individuales, seguido por pequeños grupos informales. Las reservas corporativas y los grupos organizados son minimos. Esto sugiere una operación centrada en turismo general y viajeros independientes, con poca presencia de contratos empresariales o grandes grupos.\n",
     "\n",
     "---"
    ]
@@ -5005,7 +4823,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 45,
+   "execution_count": 146,
    "id": "8c694117",
    "metadata": {},
    "outputs": [
@@ -5081,7 +4899,7 @@
    "source": [
     "**Descripción** \n",
     "\n",
-    "adr (Average Daily Rate) representa la tarifa diaria promedio pagada por el huésped.\n",
+    "`adr` (Average Daily Rate) representa la tarifa diaria promedio pagada por el huésped.\n",
     "\n",
     "**Faltantes**\n",
     "No tiene valores faltantes \n",
@@ -5135,7 +4953,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 46,
+   "execution_count": 147,
    "id": "d7a9a466",
    "metadata": {},
    "outputs": [
@@ -5197,9 +5015,10 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "Esta variable indica cuántos espacios de estacionamiento solicitó el huésped al momento de la reserva.\n",
+    "`required_car_parking_spaces` es una variable que indica cuántos espacios de estacionamiento solicitó el huésped al momento de la reserva.\n",
     "\n",
     "**Faltantes**\n",
+    "\n",
     "No tiene valores faltantes \n",
     "\n",
     "Presenta solo 4 valores posibles: 0, 1, 2 y 3.\n",
@@ -5227,7 +5046,7 @@
     "Esto confirma que el estacionamiento no es una necesidad proritaria. \n",
     "\n",
     "\n",
-    "La variable muestra que el estacionamiento casi no es un factor relevante en las reservas: solo un pequeño porcentaje de huéspedes solicita un espacio, y los casos de 2 o 3 espacios son extremadamente raros. Esto sugiere que el hotel recibe principalmente huéspedes sin vehículo o que no necesitan estacionamiento durante su estadía.\n",
+    "La variable muestra que el estacionamiento casi no es un factor relevante en las reservas, solo un pequeño porcentaje de huéspedes solicita un espacio, y los casos de 2 o 3 espacios son extremadamente raros. Esto sugiere que el hotel recibe principalmente huéspedes sin vehículo o que no necesitan estacionamiento durante su estadía.\n",
     "\n",
     "---"
    ]
@@ -5242,7 +5061,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 47,
+   "execution_count": 148,
    "id": "f78a7972",
    "metadata": {},
    "outputs": [
@@ -5308,7 +5127,7 @@
    "source": [
     "**Descripción**\n",
     "\n",
-    "Variable que indica cuántas solicitudes especiales realizó el huésped al momento de la reserva.\n",
+    "`total_of_special_requests` es una variable que indica cuántas solicitudes especiales realizó el huésped al momento de la reserva.\n",
     "\n",
     "**Faltantes**\n",
     "No tiene valores faltantes.\n",
@@ -5343,7 +5162,52 @@
     "Esto confirma que las solicitudes especiales son poco frecuentes y de baja complejidad.\n",
     "\n",
     "\n",
-    "La variable muestra que la mayoría de los huéspedes no requiere condiciones especiales en su estadía."
+    "La variable muestra que la mayoría de los huéspedes no requiere condiciones especiales en su estadía.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6c6e5aeb",
+   "metadata": {},
+   "source": [
+    "## 8. Primeras observaciones\n",
+    "\n",
+    "- El dataset está completo y contiene información suficiente para analizar patrones de cancelación.\n",
+    "\n",
+    "- Existen variables operativas (como `deposit_type`, `booking_changes`, `customer_type`) que probablemente influyan en la cancelación.\n",
+    "\n",
+    "- La distribución de `is_canceled` es clave para entender el comportamiento general del conjunto de datos.\n",
+    "\n",
+    "- La presencia de valores faltantes en company y agent deberá considerarse en etapas posteriores del análisis.\n",
+    "\n",
+    "---"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "cfd00d8f",
+   "metadata": {},
+   "source": [
+    "## 9. Consideraciones éticas iniciales\n",
+    "\n",
+    "Los datos están anonimizados y no contienen información personal.\n",
+    "Las conclusiones deben tomarse con cuidado, describen patrones generales y no permiten interpretar casos individuales.\n",
+    "El análisis debe evitar sesgos y no discriminar por país o segmento.\n",
+    "Como esta es una etapa exploratoria, solo podemos identificar tendencias iniciales.\n",
+    "\n",
+    "---\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6c037652",
+   "metadata": {},
+   "source": [
+    "## 10. Cierre\n",
+    "\n",
+    "En esta primera etapa se logro comprender la estructura del dataset, revisar sus variables principales y obtener una visión inicial del comportamiento general de las reservas. Esta base exploratoria nos permite avanzar hacia análisis más profundos sobre cancelaciones y factores asociados, siempre manteniendo un enfoque responsable y cuidadoso en la interpretación de los datos."
    ]
   }
  ],
@@ -5363,7 +5227,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.14.3"
+   "version": "3.14.7"
   }
  },
  "nbformat": 4,

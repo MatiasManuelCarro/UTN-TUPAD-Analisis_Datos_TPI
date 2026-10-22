@@ -384,13 +384,7 @@
       "Nuevo tipo de dato en children: int64\n",
       "\n",
       "Limpieza de Babies\n",
-      "\n"
-     ]
-    },
-    {
-     "name": "stdout",
-     "output_type": "stream",
-     "text": [
+      "\n",
       "Registros eliminados: 2\n",
       "Valores resultantes en babies: [0, 1, 2]\n",
       "Se elimina correctamente los valores extremadamente altos en babies\n",
@@ -432,7 +426,7 @@
          "type": "integer"
         }
        ],
-       "ref": "6fdabff2-0b91-4a15-9396-3742232b2b3e",
+       "ref": "59c53e24-e920-4242-9583-e7bf15368231",
        "rows": [
         [
          "9",
@@ -757,7 +751,13 @@
       "Name: is_canceled, dtype: float64\n",
       "\n",
       "Creacion de has_company y has_agent\n",
-      "\n",
+      "\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
       "Verificación de las primeras filas calculadas:\n",
       "   agent  has_agent  company  has_company\n",
       "0      0          0      292            1\n",
@@ -1185,7 +1185,7 @@
          "type": "integer"
         }
        ],
-       "ref": "e7f219db-2f6d-4e36-868c-d8b4afe8fd42",
+       "ref": "19f3e194-2565-4b99-9838-cf889cb9d5a0",
        "rows": [
         [
          "0",
@@ -2825,7 +2825,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 30,
+   "execution_count": 26,
    "id": "0fb387d8",
    "metadata": {},
    "outputs": [
@@ -2869,7 +2869,7 @@
          "type": "float"
         }
        ],
-       "ref": "0e3c915f-bfd5-4a50-afb6-a1bcb9544194",
+       "ref": "f5030ede-08fb-4e4f-8753-978bd7b80299",
        "rows": [
         [
          "0",
@@ -3035,7 +3035,7 @@
        "5                  2218.0                     84.95  "
       ]
      },
-     "execution_count": 30,
+     "execution_count": 26,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -3065,7 +3065,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
+   "execution_count": 27,
    "id": "e34f2bb4",
    "metadata": {},
    "outputs": [
@@ -3113,7 +3113,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 32,
+   "execution_count": 28,
    "id": "c08c868c",
    "metadata": {},
    "outputs": [

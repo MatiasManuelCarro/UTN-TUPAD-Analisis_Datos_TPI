@@ -1,0 +1,8 @@
+variable,cantidad_faltantes,porcentaje_faltantes
+is_canceled,0,0.0
+lead_time,0,0.0
+hotel,0,0.0
+market_segment,0,0.0
+deposit_type,0,0.0
+previous_cancellations,0,0.0
+total_stay_nights,0,0.0

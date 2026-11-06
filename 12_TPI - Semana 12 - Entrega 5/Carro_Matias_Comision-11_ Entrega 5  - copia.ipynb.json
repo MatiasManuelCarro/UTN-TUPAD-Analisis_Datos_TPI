@@ -24,7 +24,7 @@
     "- **Comisión:** 11\n",
     "- **Dataset asignado:** Dataset K\n",
     "- **Entrega:** Entrega Semana 12 - Unidad 5 -  Introducción al Aprendizaje Automático y Minería de Datos\n",
-    "- **Fecha:** 22/10/2026"
+    "- **Fecha:** 24/10/2026"
    ]
   },
   {
@@ -74,12 +74,8 @@
     "print(\"Versión de Seaborn:\", sns.__version__)\n",
     "print(\"Version de DuckDB: \", duckdb.__version__)\n",
     "\n",
-    "from sklearn.compose import ColumnTransformer\n",
-    "from sklearn.impute import SimpleImputer\n",
-    "from sklearn.metrics import accuracy_score, classification_report, confusion_matrix\n",
+    "\n",
     "from sklearn.model_selection import train_test_split\n",
-    "from sklearn.pipeline import Pipeline\n",
-    "from sklearn.preprocessing import OneHotEncoder\n",
     "from sklearn.tree import DecisionTreeClassifier, plot_tree\n",
     "\n",
     "print(\"Librerías cargadas correctamente.\")\n"
@@ -451,7 +447,7 @@
          "type": "integer"
         }
        ],
-       "ref": "809f01c9-586c-4400-b3bf-6e749d0385df",
+       "ref": "44b16b95-02ff-47eb-81ff-ddb41531056e",
        "rows": [
         [
          "9",
@@ -1204,7 +1200,7 @@
          "type": "integer"
         }
        ],
-       "ref": "b228778a-08d4-4bfb-8e36-704c37b3307e",
+       "ref": "b4a63cb9-495e-46b1-a83a-06091c8f25a1",
        "rows": [
         [
          "0",
@@ -1855,7 +1851,7 @@
          "type": "integer"
         }
        ],
-       "ref": "df5a6fb7-9189-42f7-8813-071b831f18fa",
+       "ref": "42ad0af0-0edc-4fb2-b265-b02bad56f0b8",
        "rows": [
         [
          "0",
@@ -2077,7 +2073,7 @@
          "type": "unknown"
         }
        ],
-       "ref": "7b20dd2c-c696-4fb0-98f6-7b5ad17e91bc",
+       "ref": "54efa7ed-1494-4d43-867d-2b6e236a0da5",
        "rows": [
         [
          "0",
@@ -2229,7 +2225,7 @@
          "type": "float"
         }
        ],
-       "ref": "b3e229cd-598a-4830-b20b-5820df52ecb3",
+       "ref": "f4c77d82-a59f-487e-833d-3fa94b5affe3",
        "rows": [
         [
          "0",
@@ -2468,7 +2464,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 12,
    "id": "a0dcf70c",
    "metadata": {},
    "outputs": [
@@ -2507,7 +2503,7 @@
     "    X,\n",
     "    y,\n",
     "    test_size=0.30,\n",
-    "    random_state=42,\n",
+    "    random_state=42, #Semilla aleatoria para seleccionar los registros\n",
     "    stratify=y\n",
     ")\n",
     "\n",
@@ -2518,6 +2514,18 @@
     "\n",
     "print(\"\\nDistribución en prueba:\")\n",
     "print((y_test.value_counts(normalize=True) * 100).round(2))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d89ba121",
+   "metadata": {},
+   "source": [
+    "### División de los datos\n",
+    "\n",
+    "La división generó **17.350** registros para entrenamiento y **7.437** para prueba, siendo aproximadamente el **70 %** y **30 %** de los datos.\n",
+    "\n",
+    "La proporción de la variable objetivo se mantiene prácticamente igual en ambos conjuntos, alrededor del 62,7 % de las reservas no fueron canceladas (`0`) y el 37,3 % fueron canceladas (`1`). Esto es por el uso de `stratify=y`, que permite conservar la distribución de la variable objetivo al realizar la división."
    ]
   },
   {
@@ -2544,7 +2552,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
+   "execution_count": 13,
    "id": "e3c8410d",
    "metadata": {},
    "outputs": [
@@ -2553,7 +2561,7 @@
      "output_type": "stream",
      "text": [
       "Variables después de la preparación: 11\n",
-      "Columnas iguales: True\n"
+      "Entrenamiento y prueba tienen las mismas columnas.\n"
      ]
     },
     {
@@ -2621,7 +2629,7 @@
          "type": "boolean"
         }
        ],
-       "ref": "05aa30e7-c3df-43db-b487-af0a2dbab583",
+       "ref": "7f0d1cf3-ba3a-4331-9218-37643e35e82b",
        "rows": [
         [
          "24641",
@@ -2866,9 +2874,27 @@
     ")\n",
     "\n",
     "print(f\"Variables después de la preparación: {X_train.shape[1]}\")\n",
-    "print(f\"Columnas iguales: {X_train.columns.equals(X_test.columns)}\")\n",
+    "\n",
+    "if X_train.columns.equals(X_test.columns):\n",
+    "    print(\"Entrenamiento y prueba tienen las mismas columnas.\")\n",
+    "else:\n",
+    "    print(\"Entrenamiento y prueba tienen columnas diferentes.\")\n",
     "\n",
     "display(X_train.head())\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "29cb1d8c",
+   "metadata": {},
+   "source": [
+    "### Preparación de las variables\n",
+    "\n",
+    "La tabla muestra las variables que serán utilizadas por el modelo luego de realizar la codificación de las variables categóricas. Las variables numéricas (`lead_time`, `previous_cancellations` y `total_stay_nights`) mantienen sus valores originales y que las variables categóricas fueron transformadas en variables indicadoras usando `get_dummies()`.\n",
+    "\n",
+    "En estas nuevas columnas, `True` indica que la reserva pertenece a esa categoría y `False` que no pertenece. Como se utiliza `drop_first=True`, una categoría de cada variable categórica se utiliza como referencia y no se representa mediante una columna propia, evitando información redundante.\n",
+    "\n",
+    "Se verifica que los conjuntos de entrenamiento y prueba tengan exactamente las mismas columnas, para confirmar que posean la misma estructura antes de entrenar y evaluar el modelo."
    ]
   },
   {
@@ -2876,12 +2902,14 @@
    "id": "154ddbdc",
    "metadata": {},
    "source": [
-    "### Entrenando el arbol"
+    "### Entrenando el arbol\n",
+    "\n",
+    "A partir de los datos previamente preparados, se entrena un árbol de decisión utilizando el conjunto de entrenamiento. El objetivo es que el modelo identifique patrones en las variables predictoras que permitan clasificar una reserva como cancelada o no cancelada."
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 17,
+   "execution_count": 14,
    "id": "12ed4fcf",
    "metadata": {},
    "outputs": [
@@ -2937,7 +2965,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 18,
+   "execution_count": 15,
    "id": "5eb7fa80",
    "metadata": {},
    "outputs": [
@@ -2953,7 +2981,6 @@
     }
    ],
    "source": [
-    "from sklearn.tree import plot_tree\n",
     "\n",
     "plt.figure(figsize=(20, 10))\n",
     "\n",
@@ -2972,6 +2999,23 @@
   },
   {
    "cell_type": "markdown",
+   "id": "5ec17900",
+   "metadata": {},
+   "source": [
+    "### Que hace el arbol de decisión\n",
+    "\n",
+    "El árbol de decisión realiza la clasificación mediante una serie de preguntas sobre las variables predictoras. El recorrido comienza en el nodo superior y, según se cumpla o no cada condición, continúa por una de las ramas hasta llegar a una hoja, donde se obtiene la clasificación final como reserva cancelada o no cancelada.\n",
+    "\n",
+    "En cada nodo, `samples` indica la cantidad de registros que llegaron hasta ese punto, `value` muestra cuántos pertenecen a cada clase y `class` indica la clase que el modelo asignaría en ese nodo.\n",
+    "\n",
+    "Por ejemplo, la primera decisión del árbol utiliza el tipo de depósito (`deposit_type_Non Refund`). A partir de allí, el modelo continúa evaluando otras variables, como `lead_time`, `market_segment` y `hotel`, hasta determinar la clasificación correspondiente.\n",
+    "\n",
+    "La profundidad máxima de 3 permite mantener un árbol relativamente sencillo y facilita la interpretación de las reglas utilizadas para realizar las predicciones.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
    "id": "a1b041a4",
    "metadata": {},
    "source": [
@@ -2986,7 +3030,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
+   "execution_count": null,
    "id": "26f97e01",
    "metadata": {},
    "outputs": [
@@ -3020,7 +3064,7 @@
          "type": "boolean"
         }
        ],
-       "ref": "46f4c8ed-cf16-47bc-a2fc-2947337b563a",
+       "ref": "d7a6557c-6131-415b-9448-782566b6ab82",
        "rows": [
         [
          "0",
@@ -3395,13 +3439,15 @@
    "source": [
     "### Inspección de las primeras predicciones\n",
     "\n",
-    "Al observar las primeras 20 reservas del conjunto de prueba, se identifican tanto aciertos como errores del modelo. En 15 casos la predicción coincide con el resultado real, mientras que en 5 casos existe una diferencia.\n",
+    "Al observar las primeras 20 reservas del conjunto de prueba, se identifican los ciertos y errores del modelo. En 15 casos la predicción coincide con el resultado real, mientras que en 5 casos existe una diferencia.\n",
     "\n",
     "En esta muestra se observan 6 reservas que realmente fueron canceladas. El modelo clasificó correctamente una de ellas como cancelada, con una probabilidad estimada de cancelación de 0,998. Sin embargo, las cinco restantes fueron clasificadas como no canceladas.\n",
     "\n",
-    "También se observan diferentes probabilidades estimadas para las reservas clasificadas como no canceladas, con valores como 0,092, 0,195, 0,221 y 0,425. Esto muestra que la clase predicha puede ser la misma aunque la probabilidad estimada por el modelo sea diferente.\n",
+    "Aunque varias reservas fueron clasificadas como no canceladas, el modelo les asignó diferentes probabilidades de cancelación.\n",
     "\n",
-    "Estos resultados corresponden únicamente a una inspección de los primeros 20 casos del conjunto de prueba y no constituyen una evaluación general del rendimiento del modelo."
+    "Esta observación se realiza únicamente sobre los primeros 20 casos de prueba, por lo que no permite evaluar el rendimiento general del modelo.\n",
+    "\n",
+    "---\n"
    ]
   },
   {
@@ -3413,7 +3459,17 @@
     "\n",
     "En las primeras 20 predicciones del conjunto de prueba se observan 15 casos en los que la clasificación realizada por el modelo coincide con el resultado real y 5 casos en los que no coincide.\n",
     "\n",
-    "En particular, se observan 6 reservas que realmente fueron canceladas. El modelo identificó correctamente una de ellas como cancelada, mientras que las otras cinco fueron clasificadas como no canceladas. También se observan diferencias en las probabilidades estimadas: varias reservas fueron clasificadas como no canceladas con probabilidades de cancelación de 0,092, 0,195, 0,221 o 0,425, mientras que la reserva clasificada como cancelada presentó una probabilidad de 0,998.\n",
+    "Se puede ver 6 reservas que realmente fueron canceladas. El modelo identificó correctamente una de ellas como cancelada, mientras que las otras cinco fueron clasificadas como no canceladas. También se observan diferencias en las probabilidades estimadas, varias reservas fueron clasificadas como no canceladas con probabilidades de cancelación de 0,092, 0,195, 0,221 o 0,425, mientras que la reserva clasificada como cancelada presentó una probabilidad de 0,998.\n",
+    "\n",
+    "***Que quieren decir estas probabilidades:***\n",
+    "\n",
+    "- **0,092** equivale aproximadamente a un **9,2 % de probabilidad de cancelación**.\n",
+    "- **0,195** equivale aproximadamente a un **19,5 % de probabilidad de cancelación**.\n",
+    "- **0,221** equivale aproximadamente a un **22,1 % de probabilidad de cancelación**.\n",
+    "- **0,425** equivale aproximadamente a un **42,5 % de probabilidad de cancelación**.\n",
+    "- **0,998** equivale aproximadamente a un **99,8 % de probabilidad de cancelación**.\n",
+    "\n",
+    "Por lo tanto, aunque varias reservas tengan como resultado final **\"no cancelada\"**, el modelo puede estimar distintos niveles de probabilidad de cancelación para cada una.\n",
     "\n",
     "Estas primeras observaciones muestran que la predicción del modelo no debe interpretarse como una certeza. Una misma clase predicha puede estar asociada a diferentes probabilidades y el modelo también puede cometer errores.\n",
     "\n",
@@ -3425,15 +3481,15 @@
     "\n",
     "### Limitaciones\n",
     "\n",
-    "1. **Errores de clasificación:** el modelo puede clasificar incorrectamente una reserva. En los primeros casos inspeccionados se observan reservas que realmente fueron canceladas pero que el modelo clasificó como no canceladas. Dependiendo del contexto, este tipo de error podría impedir que el hotel identifique anticipadamente una cancelación.\n",
+    "1. **Errores de clasificación:** el modelo puede clasificar incorrectamente una reserva. En los primeros casos inspeccionados se observan reservas que realmente fueron canceladas pero que el modelo clasificó como no canceladas.Este tipo de error podría impedir que el hotel identifique anticipadamente una cancelación.\n",
     "\n",
-    "2. **Dependencia de los datos históricos:** el modelo aprende patrones presentes en los datos utilizados para entrenarlo. Si cambian las características de las reservas, las políticas del hotel o el comportamiento de los clientes, esos patrones podrían no mantenerse en el futuro.\n",
+    "2. **Dependencia de los datos históricos:** el modelo aprende patrones presentes en los datos utilizados para entrenarlo. Si cambian las características de las reservas, las políticas del hotel o el comportamiento de los clientes, esos patrones podrían no servir en el futuro.\n",
     "\n",
-    "3. **Modelo inicial y simplificado:** se utilizó un árbol limitado a una profundidad máxima de tres niveles y solamente seis variables predictoras. Por lo tanto, pueden existir otros factores relevantes que el modelo no esté considerando.\n",
+    "3. **Modelo inicial y simplificado:** se utilizó un árbol limitado a una profundidad máxima de tres niveles y solamente seis variables predictoras. Pueden existir otros factores relevantes que el modelo no esté considerando.\n",
     "\n",
-    "Además, las relaciones aprendidas por el árbol permiten realizar predicciones, pero no implican que las variables utilizadas sean causas directas de una cancelación.\n",
+    "Las relaciones aprendidas por el árbol permiten realizar predicciones, pero no implican que las variables utilizadas sean causas directas de una cancelación.\n",
     "\n",
-    "En conclusión, este primer árbol de decisión permite explorar la posibilidad de anticipar cancelaciones mediante información disponible al momento de registrar una reserva. Los resultados obtenidos son útiles como una primera aproximación, pero deben interpretarse con cautela y requieren una evaluación más completa antes de considerar su utilización para la toma de decisiones."
+    "Este primer árbol de decisión permite explorar la posibilidad de anticipar cancelaciones mediante información disponible al momento de registrar una reserva. Los resultados obtenidos son útiles como una primera aproximación, pero deben interpretarse con cautela y requieren una evaluación más completa antes de considerar su utilización para la toma de decisiones."
    ]
   }
  ],
@@ -3453,7 +3509,7 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.14.8"
+   "version": "3.14.9"
   }
  },
  "nbformat": 4,
